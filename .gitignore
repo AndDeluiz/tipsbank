@@ -4,15 +4,22 @@
 *.csr
 *.pem
 *.crt
+*.b64
+*.p12
+*.pfx
+
 # Kubeconfigs gerados para os perfis RBAC e dos clusters
 *.kubeconfig
 kubeconfig*
 evidencias/kubeconfigs/
+
 # Chaves Cosign (a publica cosign.pub pode ir; a privada nunca)
 cosign.key
+
 # htpasswd do Basic Auth do Ingress
 auth
 *.htpasswd
+
 # Variaveis de ambiente / credenciais locais
 .env
 .env.*
@@ -39,3 +46,15 @@ __pycache__/
 *:Zone.Identifier
 .vscode/
 .idea/
+
+# AI files
+AGENT.md
+SKILLS.md
+.agents/
+.claude/
+claude.json
+.gemini/
+.antigravity/
+
+# --- Security Reports ---
+docs/security/reports/
