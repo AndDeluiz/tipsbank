@@ -3,7 +3,7 @@
 # =============================================================================
 # STAGE 1 — builder (Python 3.11-slim)
 # =============================================================================
-FROM python:3.11-slim-bookworm AS builder
+FROM dhi.io/python:3.13-debian-dev AS builder
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ COPY main.py .
 # STAGE 2 — runtime (Distroless Python, sem shell, sem package manager)
 # gcr.io/distroless/python3-debian12 → Python 3.11 + glibc, user nonroot (uid 65532)
 # =============================================================================
-FROM gcr.io/distroless/python3-debian12:nonroot
+FROM cgr.dev/chainguard/python:latest
 
 WORKDIR /app
 
