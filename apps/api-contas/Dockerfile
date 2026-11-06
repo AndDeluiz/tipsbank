@@ -1,21 +1,20 @@
 # syntax=docker/dockerfile:1.7
 
 # =============================================================================
-# STAGE 1 — builder (Python 3.13-debian-dev)
+# STAGE 1 — builder (Python 3.15-slim)
 # =============================================================================
-FROM dhi.io/python:3.13-debian-dev AS builder
+FROM python:3.15-slim-bookworm AS builder
 
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir --target=/packages -r requirements.txt
+RUN pip install --no-cache-dir --target=/packages -r requirements.txt
 
 COPY main.py .
 
 # =============================================================================
 # STAGE 2 — runtime (Distroless Python, sem shell, sem package manager)
-# cgr.dev/chainguard/python:latest → Python 3.15 + glibc, user nonroot (uid 65532)
+# Chainguard latest currently uses Python 3.15; keep this aligned with the builder.
 # =============================================================================
 FROM cgr.dev/chainguard/python:latest
 

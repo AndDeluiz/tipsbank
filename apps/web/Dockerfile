@@ -1,11 +1,9 @@
 # syntax=docker/dockerfile:1.7
 
 # =============================================================================
-# Imagem: nginx-unprivileged (roda como user 101, nao-root por default).
-# Alternativa didatica a Distroless: enxuta (~25 MB), usuario nao-root,
-# binariamente isolada. Dia-13 do DK8s: minimalismo + nao-root.
+# Imagem: chainguard/nginx:latest (roda como user , nao-root por default).
 # =============================================================================
-FROM nginxinc/nginx-unprivileged:1.27-alpine
+FROM cgr.dev/chainguard/nginx:latest
 
 EXPOSE 8080
 

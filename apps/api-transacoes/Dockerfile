@@ -1,6 +1,9 @@
 # syntax=docker/dockerfile:1.7
 
-FROM python:3.11-slim-bookworm AS builder
+# =============================================================================
+# STAGE 1 — builder (Python 3.15-slim)
+# =============================================================================
+FROM python:3.15-slim-bookworm AS builder
 
 WORKDIR /app
 
@@ -10,7 +13,11 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY main.py .
 
-FROM gcr.io/distroless/python3-debian12:nonroot
+# =============================================================================
+# STAGE 2 — runtime (Distroless Python, sem shell, sem package manager)
+# Chainguard latest currently uses Python 3.15; keep this aligned with the builder.
+# =============================================================================
+FROM cgr.dev/chainguard/python:latest
 
 WORKDIR /app
 
