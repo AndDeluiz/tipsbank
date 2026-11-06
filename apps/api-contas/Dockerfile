@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
 # =============================================================================
-# STAGE 1 — builder (Python 3.11-slim)
+# STAGE 1 — builder (Python 3.13-debian-dev)
 # =============================================================================
 FROM dhi.io/python:3.13-debian-dev AS builder
 
@@ -15,7 +15,7 @@ COPY main.py .
 
 # =============================================================================
 # STAGE 2 — runtime (Distroless Python, sem shell, sem package manager)
-# gcr.io/distroless/python3-debian12 → Python 3.11 + glibc, user nonroot (uid 65532)
+# cgr.dev/chainguard/python:latest → Python 3.15 + glibc, user nonroot (uid 65532)
 # =============================================================================
 FROM cgr.dev/chainguard/python:latest
 

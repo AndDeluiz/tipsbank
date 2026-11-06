@@ -10,23 +10,23 @@
 
 - `curl http://localhost:8081/contas` retorna as 2 contas seed (sem campo `senha_hash` exposto)
 
-  ![Contas Seed](./contas_seed.png)
+  ![Contas Seed](./etapa-1.1/contas_seed.png)
 
 - Login bate 200 com senha certa e 401 com errada:
   
-![Login](./login.png)
+![Login](./etapa-1.1/login.png)
 
 - Uma transferência de R$ 100 muda o saldo de ambas as contas
 
-  ![Transferência e Mudança de Saldo](./transferencia_mudanca_saldo.png)
+  ![Transferência e Mudança de Saldo](./etapa-1.1/transferencia_mudanca_saldo.png)
 
 - O arquivo `/data/eventos-YYYY-MM-DD.jsonl` dentro do container `auditoria` tem uma linha por transferência
   
-  ![Auditoria](./auditoria.png)
+  ![Auditoria](./etapa-1.1/auditoria.png)
 
 - SPA em `localhost:8080` funciona ponta a ponta (abrir, logar, transferir, ver extrato)
 
-  ![SPA em Execução](./spa_funcionando.mp4)
+  ![SPA em Execução](./etapa-1.1/spa_funcionando.mp4)
 
 ---
 
