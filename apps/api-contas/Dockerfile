@@ -8,7 +8,7 @@ FROM python:3.15-slim-bookworm AS builder
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir --target=/packages -r requirements.txt
+RUN pip install --no-cache-dir --no-compile --target=/packages -r requirements.txt
 
 COPY main.py .
 

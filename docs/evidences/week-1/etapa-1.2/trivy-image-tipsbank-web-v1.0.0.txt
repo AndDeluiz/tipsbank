@@ -1,0 +1,19 @@
+2026-11-13T14:59:48-03:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-13T14:59:48-03:00	INFO	[secret] Secret scanning is enabled
+2026-11-13T14:59:48-03:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2026-11-13T14:59:48-03:00	INFO	[secret] Please see https://trivy.dev/docs/v0.76/guide/scanner/secret#recommendation for faster secret detection
+2026-11-13T14:59:48-03:00	INFO	Detected OS	family="wolfi" version="20230201"
+2026-11-13T14:59:48-03:00	INFO	[wolfi] Detecting vulnerabilities...	pkg_num=23
+2026-11-13T14:59:48-03:00	INFO	Number of language-specific files	num=0
+
+Report Summary
+
+┌────────────────────────────────────────────────────────┬───────┬─────────────────┬─────────┐
+│                         Target                         │ Type  │ Vulnerabilities │ Secrets │
+├────────────────────────────────────────────────────────┼───────┼─────────────────┼─────────┤
+│ ghcr.io/anddeluiz/tipsbank-web:v1.0.0 (wolfi 20230201) │ wolfi │        0        │    -    │
+└────────────────────────────────────────────────────────┴───────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+

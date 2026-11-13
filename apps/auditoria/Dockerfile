@@ -9,7 +9,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir --target=/packages -r requirements.txt
+    pip install --no-cache-dir --no-compile --target=/packages -r requirements.txt
 
 COPY main.py .
 
