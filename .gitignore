@@ -14,6 +14,7 @@ kubeconfig*
 evidencias/kubeconfigs/
 
 # Chaves Cosign (a publica cosign.pub pode ir; a privada nunca)
+cosign/cosign.key
 cosign.key
 
 # htpasswd do Basic Auth do Ingress

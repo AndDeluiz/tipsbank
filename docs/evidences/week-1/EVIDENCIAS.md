@@ -359,7 +359,15 @@ A utilização de **multi-stage build** permite que uma imagem seja criada utili
 
 
 - `cosign verify` passa nas 4 imagens
+
+  ![cosign verify](./etapa-1.2/cosign-verify-all-images.png)
+
 - `docker inspect` mostra que o usuário final é não-root (UID 65532 nas 3 APIs, UID 101 no `web`)
+
+  Com a utilização da imagem Chainguard `nginx:latest` o UID para execução por padrão é 65532 (non-root).
+
+  ![docker inspect](./etapa-1.2/docker-inspect-containers.png)
+
 - Tamanho final das imagens Python < 150 MB; `web` (nginx) < 30 MB
 
   ![Tamanho das Imagens](./etapa-1.2/docker-image-ls.png)

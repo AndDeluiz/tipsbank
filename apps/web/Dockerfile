@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
 # =============================================================================
-# Imagem: chainguard/nginx:latest (roda como user , nao-root por default).
+# Imagem: chainguard/nginx:latest (roda como user 65532, nao-root por default).
 # =============================================================================
 FROM cgr.dev/chainguard/nginx:latest
 
@@ -15,4 +15,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # por outros) pro user 101 (nginx) conseguir ler. Docker COPY preserva perms.
 COPY html/ /usr/share/nginx/html/
 
-# USER 101 (nginx) ja eh o default dessa imagem.
+# USER 65532 (nginx) ja eh o default dessa imagem.
+# USER 65532
